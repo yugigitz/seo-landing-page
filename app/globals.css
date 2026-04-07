@@ -1,0 +1,395 @@
+:root {
+  --bg: #f5efe5;
+  --panel: rgba(255, 252, 246, 0.75);
+  --panel-strong: #fffaf2;
+  --text: #1d1a17;
+  --muted: #5d554d;
+  --accent: #d8612b;
+  --accent-dark: #ab4319;
+  --border: rgba(29, 26, 23, 0.1);
+  --shadow: 0 20px 50px rgba(73, 50, 23, 0.12);
+  --font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(216, 97, 43, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(247, 196, 128, 0.25), transparent 25%),
+    linear-gradient(180deg, #f9f3ea 0%, var(--bg) 45%, #f6efe7 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 1.5rem clamp(1.25rem, 3vw, 3rem) 3rem;
+}
+
+.nav,
+.heroContent,
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.brand,
+.navLinks a,
+.eyebrow,
+.processGrid span {
+  font-family: var(--font-display), sans-serif;
+}
+
+.brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--muted);
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.heroCopy h1,
+.sectionHeading h2,
+.cta h2 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.7rem, 6vw, 5.3rem);
+  line-height: 0.95;
+}
+
+.lead,
+.serviceCard p,
+.processGrid p,
+.cta p,
+.heroMetrics span,
+.heroCard p,
+.contactNote {
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--accent-dark);
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 58ch;
+  margin: 1.5rem 0 0;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0 1.4rem;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.buttonPrimary {
+  background: var(--text);
+  color: #fff;
+}
+
+.buttonSecondary {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.heroMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.heroMetrics li,
+.heroCard,
+.serviceCard,
+.processGrid article,
+.cta {
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.heroMetrics li {
+  padding: 1.25rem;
+  border-radius: 1.4rem;
+  background: rgba(255, 250, 242, 0.72);
+}
+
+.heroMetrics strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.heroCard {
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem;
+  border-radius: 1.8rem;
+  background: linear-gradient(180deg, rgba(255, 250, 242, 0.95), rgba(255, 247, 236, 0.85));
+}
+
+.heroCard::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -20% auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(216, 97, 43, 0.11);
+}
+
+.cardLabel {
+  margin-bottom: 0.75rem;
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroCard h2 {
+  margin: 0 0 1.5rem;
+  max-width: 11ch;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.cardGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cardGrid > div {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.section {
+  padding: 2rem clamp(1.25rem, 3vw, 3rem) 4rem;
+}
+
+.trustBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 0;
+}
+
+.trustBar p {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.sectionHeading {
+  margin-bottom: 2rem;
+}
+
+.sectionHeading h2 {
+  max-width: 15ch;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.serviceGrid,
+.processGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.serviceGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.processGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.serviceCard,
+.processGrid article,
+.cta {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+}
+
+.serviceCard h3,
+.processGrid h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.processGrid span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.testimonial {
+  text-align: center;
+}
+
+.testimonial blockquote {
+  margin: 0 auto;
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.ctaWrap {
+  padding-top: 0;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, var(--panel-strong), #f8ecdf);
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+  max-width: 10ch;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.contactActions {
+  display: grid;
+  gap: 0.8rem;
+  justify-items: start;
+}
+
+.contactNote {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 960px) {
+  .heroContent,
+  .serviceGrid,
+  .processGrid,
+  .trustBar,
+  .heroMetrics {
+    grid-template-columns: 1fr;
+  }
+
+  .heroCopy h1,
+  .sectionHeading h2,
+  .cta h2,
+  .testimonial blockquote,
+  .heroCard h2 {
+    max-width: none;
+  }
+
+  .cta {
+    display: grid;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero {
+    padding-top: 1rem;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(2.4rem, 12vw, 3.4rem);
+  }
+
+  .section,
+  .hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .heroCard,
+  .serviceCard,
+  .processGrid article,
+  .cta {
+    border-radius: 1.25rem;
+  }
+}
